@@ -1751,8 +1751,6 @@ footer p {
     text-align: center;
 }
 
-.error-contents {}
-
 .pricing-box {
     padding: 30px 0px;
 }
@@ -1841,8 +1839,6 @@ footer p {
     color: #fff;
     padding: 0px 15px;
 }
-
-.map-main {}
 
 @media (min-width:768px) and (max-width:991px) {
     .navbar-expand-lg.top-nav .navbar-nav .nav-link.dropdown-toggle::after {
