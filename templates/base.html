@@ -1,0 +1,136 @@
+{% load i18n static %}
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+    <title>MavenBiz - {% block title %}{% endblock %}</title>
+
+    {% block responsive %}
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% if LANGUAGE_BIDI %}<!--<link rel="stylesheet" type="text/css" href="{% static "admin/css/responsive_rtl.css" %}">-->{% endif %}
+    {% endblock %}
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logosmall.png' %}"/>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+    
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">	
+	<link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" href="{% static 'css/style.css'%}"> 
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
+    
+    {% block extrabasehead %}{% endblock %}
+
+    {% block extrahead %}{% endblock %}
+
+    {% block extrabasestyle %}{% endblock %}
+
+    {% block extrastyle %}{% endblock %}
+
+    <style>
+
+        /*::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {   
+            border-radius: 50px;
+            background: #a8a8a8;
+        }
+
+        ::-webkit-scrollbar-track {     
+            background-color: none;
+            background: none;
+        }*/
+
+        .card.maximized-card .card-body {
+            overflow-y: auto;
+        }
+
+    </style>
+  
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    {% if LANGUAGE_BIDI %}<!--<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">-->{% endif %}
+
+    {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+</head>
+{% load i18n %}
+
+{% block bodyline %}<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed pace-barber-shop-info">{% endblock %}
+{% block wrapper %}
+
+{% endblock %}
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
+<script>
+    $.widget.bridge('uibutton', $.ui.button);
+</script>
+    
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/filter.js' %}"></script>
+<script src="{% static 'js/jquery.appear.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+<script src="{% static 'plugins/toastr/toastr.min.js' %}"></script>
+
+<script type="text/javascript">
+  
+    $(function() {
+        toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+        }
+    });
+
+</script>
+
+{% block extrabasescript %}{% endblock %}
+
+{% block extrascript %}{% endblock %}
+</body>
+</html>
